@@ -1,3 +1,6 @@
-<p>
-  stars works!
-</p>
+<div class="row mx-0">
+  <div *ngFor="let star of stars;">
+    <fa-icon *ngIf="star == true" [icon]="faStar"></fa-icon>
+    <fa-icon *ngIf="star == false" [icon]="faStarHalf"></fa-icon>
+  </div>
+</div>

@@ -8,7 +8,7 @@ import { Product } from './product.model';
 })
 export class ProductComponent implements OnInit {
 
-  private products: Product[];
+  public products: Product[];
 
   constructor() { }
 
@@ -17,8 +17,8 @@ export class ProductComponent implements OnInit {
     this.products = [
        new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
        new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
-       new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
-       new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
+       new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4.2, ['laptop', 'gaming']),
+       new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 3.7, ['laptop', 'gaming']),
        new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
        new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
        new Product(1, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),

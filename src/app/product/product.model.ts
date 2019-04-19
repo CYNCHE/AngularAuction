@@ -16,6 +16,6 @@ export class Product {
     public image: string,
     public price: number,
     public description: string,
-    public star: number,
+    public rate: number,
     public category: string[]) {}
 }
