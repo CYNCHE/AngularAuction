@@ -19,10 +19,8 @@ export class StarsComponent implements OnInit {
   ngOnInit() {
     // decide how many full stars
     let fullStar = Math.floor(this.rate), halfStar = this.rate % 1;
-    console.log(fullStar);
     for (let i = 0; i < fullStar; ++i) this.stars.push(true);
     if (halfStar > 0 && halfStar < 1) this.stars.push(false);
-    console.log(this.stars);
   }
 
 }

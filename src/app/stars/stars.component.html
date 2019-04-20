@@ -1,6 +1,11 @@
-<div class="row mx-0">
-  <div *ngFor="let star of stars;">
-    <fa-icon *ngIf="star == true" [icon]="faStar"></fa-icon>
-    <fa-icon *ngIf="star == false" [icon]="faStarHalf"></fa-icon>
+<div class="d-flex mx-0 bg-danger justify-content-between">
+  <div class="d-flex bg-dark"  >
+    <div *ngFor="let star of stars;">
+
+      <fa-icon *ngIf="star == true" [icon]="faStar"></fa-icon>
+      <fa-icon *ngIf="star == false" [icon]="faStarHalf"></fa-icon>
+    </div>
   </div>
+  <div class="ml-1 align-self-end bg-primary">{{ rate }}</div>
 </div>
+
