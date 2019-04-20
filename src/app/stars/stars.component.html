@@ -1,11 +1,10 @@
-<div class="d-flex mx-0 bg-danger justify-content-between">
-  <div class="d-flex bg-dark"  >
+<div class="d-flex mx-0 justify-content-between">
+  <div class="d-flex">
     <div *ngFor="let star of stars;">
-
       <fa-icon *ngIf="star == true" [icon]="faStar"></fa-icon>
       <fa-icon *ngIf="star == false" [icon]="faStarHalf"></fa-icon>
     </div>
   </div>
-  <div class="ml-1 align-self-end bg-primary">{{ rate }}</div>
+  <div class="ml-1 align-self-end">{{ rate }}</div>
 </div>
 
