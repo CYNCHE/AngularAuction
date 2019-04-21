@@ -9,7 +9,7 @@
 
 
 <div class="row ">
-  <div class="card border-light col-4 my-3" *ngFor="let product of products">
+  <div class="card border-light col-4 my-3" *ngFor="let product of products | filter:'name':keyword">
     <img src="https://picsum.photos/280/130?image=200" class="card-img-top" alt="...">
     <div class="card-body pb-0">
       <div class="row justify-content-between mx-0">

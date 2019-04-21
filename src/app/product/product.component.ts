@@ -15,9 +15,9 @@ export class ProductComponent implements OnInit {
   public products: Product[];
 
   // search keyword
-  private keyword: string;
+  public keyword: string;
 
-  private titleFilter: FormControl = new FormControl();
+  public titleFilter: FormControl = new FormControl();
 
   constructor(private productService: ProductService) {
     this.titleFilter.valueChanges
