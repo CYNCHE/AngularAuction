@@ -1,23 +1,28 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div class="form-group">
-      <input type=" " class="form-control" placeholder="Search product..." [formControl]="titleFilter">
-    </div>
-  </div>
-</div>
+<div class="row mx-0">
 
 
-
-<div class="row ">
-  <div class="card border-light col-4 my-3" *ngFor="let product of products | filter:'name':keyword">
-    <img src="https://picsum.photos/280/130?image=200" class="card-img-top" alt="...">
-    <div class="card-body pb-0">
-      <div class="row justify-content-between mx-0">
-        <h5 class="card-title" [routerLink]="['/product', product.id]" style="cursor: pointer">{{ product.name }}</h5>
-        <h5 class="text-muted">${{ product.price }}</h5>
+    <div class="col-12  px-0">
+      <div class="form-group">
+        <input type=" " class="form-control" placeholder="Search product..." [formControl]="titleFilter">
       </div>
-      <p class="card-text">{{ product.description }}</p>
-      <app-stars [rate]="product.rate"></app-stars>
     </div>
-  </div>
+
+
+
+
+
+    <div class="my-3 col-md-4"  *ngFor="let product of products | filter:'name':keyword">
+      <div class="card border-light ">
+        <img src="https://picsum.photos/280/130?image=200" class="card-img-top" alt="...">
+        <div class="card-body pb-0">
+          <div class="row justify-content-between mx-0">
+            <h5 class="card-title" [routerLink]="['/product', product.id]" style="cursor: pointer">{{ product.name }}</h5>
+            <h5 class="text-muted">${{ product.price }}</h5>
+          </div>
+          <p class="card-text">{{ product.description }}</p>
+          <app-stars [rate]="product.rate"></app-stars>
+        </div>
+      </div>
+    </div>
+
 </div>
