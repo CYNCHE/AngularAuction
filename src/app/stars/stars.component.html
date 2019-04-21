@@ -1,4 +1,7 @@
-<div class="d-flex mx-0 justify-content-between">
+<!-- d-flex to make stars and digital rate shown in the same line
+     like what class row does -->
+<div class="d-flex mx-0 ">
+  <!-- d-flex to make all the stars show in the same line -->
   <div class="d-flex">
     <div *ngFor="let star of stars;">
       <fa-icon *ngIf="star == true" [icon]="faStar"></fa-icon>
