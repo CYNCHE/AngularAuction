@@ -1,4 +1,28 @@
+<div class="card border-0">
+  <img src="http://placehold.it/820x320" class="card-img-top" alt="...">
+  <div class="card-body">
+    <div class="row justify-content-between mx-0">
+      <h5 class="card-title" >{{ product.name }}</h5>
+      <h5 class="text-muted">${{ product.price }}</h5>
+    </div>
+    <p>{{ product.description }}</p>
+    <app-stars [rate]="product.rate"></app-stars>
+  </div>
+</div>
+<br>
+<br><br><br>
 <div>
-  <img src="http://placehold.it/820x230" alt="">
-  <h4>{{ productName }}</h4>
+  <h2 class="header ml-0">Review</h2>
+  <div class="card border-0" *ngFor="let comment of comments">
+    <div class="card-body">
+      <div class="row justify-content-between mx-0">
+        <h5 class="header card-title">{{ comment.user }}</h5>
+        <p class="card-text">{{ comment.timeStamp }}</p>
+      </div>
+      <app-stars [rate]="comment.rating"></app-stars>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.</p>
+
+    </div>
+  </div>
 </div>

@@ -4,7 +4,7 @@
     <img src="https://picsum.photos/280/130?image=200" class="card-img-top" alt="...">
     <div class="card-body pb-0">
       <div class="row justify-content-between mx-0">
-        <h5 class="card-title" [routerLink]="['/product', product.name]" style="cursor: pointer">{{ product.name }}</h5>
+        <h5 class="card-title" [routerLink]="['/product', product.id]" style="cursor: pointer">{{ product.name }}</h5>
         <h5 class="text-muted">${{ product.price }}</h5>
       </div>
       <p class="card-text">{{ product.description }}</p>
