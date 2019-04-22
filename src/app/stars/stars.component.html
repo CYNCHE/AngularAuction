@@ -4,10 +4,11 @@
   <!-- d-flex to make all the stars show in the same line -->
   <div class="d-flex">
     <div *ngFor="let star of stars;">
-      <fa-icon *ngIf="star == true" [icon]="faStar"></fa-icon>
-      <fa-icon *ngIf="star == false" [icon]="faStarHalf"></fa-icon>
+      <fa-icon *ngIf="star == 0" [icon]="faStarEmpty"></fa-icon>
+      <fa-icon *ngIf="star == 1" [icon]="faStar"></fa-icon>
+      <fa-icon *ngIf="star == 2" [icon]="faStarHalf"></fa-icon>
     </div>
   </div>
   <div class="ml-1 align-self-end">{{ rate }}</div>
 </div>
-
+<fa-icon [icon]="['fas','star']"></fa-icon>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { faStarHalf, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStarHalfAlt, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarEmpty }  from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-stars',
@@ -9,18 +10,24 @@ import { faStarHalf, faStar } from '@fortawesome/free-solid-svg-icons';
 export class StarsComponent implements OnInit {
 
   @Input() rate: number;
-  public stars: boolean[] = [];
+  // by deafault review contains five empty stars
+  public stars: number[] = [0, 0, 0, 0, 0];
 
-  faStarHalf = faStarHalf;
+  faStarHalf = faStarHalfAlt;
   faStar = faStar;
+  faStarEmpty = faStarEmpty;
+
 
   constructor() { }
 
   ngOnInit() {
-    // decide how many full stars
+    // decide how many full stars and half star
+    // use number to indicate the shape of star
+    // full star code 1, half star code 2
     let fullStar = Math.floor(this.rate), halfStar = this.rate % 1;
-    for (let i = 0; i < fullStar; ++i) this.stars.push(true);
-    if (halfStar > 0 && halfStar < 1) this.stars.push(false);
+    let i = 0;
+    for (; i < fullStar; ++i) this.stars[i] = 1;
+    if (halfStar > 0 && halfStar < 1) this.stars[i] = 2;
   }
 
 }
