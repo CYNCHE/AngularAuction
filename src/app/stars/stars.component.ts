@@ -28,6 +28,12 @@ export class StarsComponent implements OnInit {
     let i = 0;
     for (; i < fullStar; ++i) this.stars[i] = 1;
     if (halfStar > 0 && halfStar < 1) this.stars[i] = 2;
+    for (; i < 5; ++i) this.stars[i] = 0;
+  }
+
+  onClickStar(index: number) {
+    this.rate = index + 1;
+    this.ngOnInit();
   }
 
 }
