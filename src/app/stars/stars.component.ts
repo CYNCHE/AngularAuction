@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { faStarHalfAlt, faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faStarEmpty }  from '@fortawesome/free-regular-svg-icons';
+import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-stars',
@@ -10,8 +10,12 @@ import { faStar as faStarEmpty }  from '@fortawesome/free-regular-svg-icons';
 export class StarsComponent implements OnInit {
 
   @Input() rate: number;
+  public rateChange: EventEmitter<number> = new EventEmitter();
   // by deafault review contains five empty stars
   public stars: number[] = [0, 0, 0, 0, 0];
+
+
+  public readonly: boolean = true;
 
   faStarHalf = faStarHalfAlt;
   faStar = faStar;
@@ -32,8 +36,11 @@ export class StarsComponent implements OnInit {
   }
 
   onClickStar(index: number) {
-    this.rate = index + 1;
-    this.ngOnInit();
+    if (!this.readonly) {
+      this.rate = index + 1;
+      this.ngOnInit();
+      this.rateChange.emit(this.rate);
+    }
   }
 
 }

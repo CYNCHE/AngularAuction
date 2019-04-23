@@ -13,6 +13,9 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product;
 
+  newRating: number = 5;
+  newComment: string = "";
+
   comments: Comment[];
   constructor(private route: ActivatedRoute,
               private productService: ProductService) { }
@@ -21,6 +24,11 @@ export class ProductDetailComponent implements OnInit {
     let productId: number = this.route.snapshot.params["productId"];
     this.product = this.productService.getProduct(productId);
     this.comments = this.productService.getComments(productId);
+  }
+
+  addComment() {
+    let comment = new Comment(1, this.product.id, new Date().toDateString(), "Vanessa", this.newRating, this.newComment);
+    this.comments.unshift(comment);
   }
 
 }

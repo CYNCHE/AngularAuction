@@ -12,7 +12,12 @@
 <br>
 <br><br><br>
 <div>
-  <h2 class="header ml-0">Review</h2>
+  <h2 class="header ml-0" style="padding-left: 1.25rem">Review</h2>
+  <div style="padding-left: 1.25rem; padding-bottom: 1.25rem">
+    <app-stars [(rate)]="newRating"></app-stars>
+    <textarea class="form-control" rows=5 [(ngModel)]="newComment" style="margin-top: 1.25rem; width: 100%"></textarea>
+    <button class="btn btn-primary mt-3" type="submit" (click)="addComment()">Submit</button>
+  </div>
   <div class="card border-0" *ngFor="let comment of comments">
     <div class="card-body">
       <div class="row justify-content-between mx-0">
@@ -20,8 +25,7 @@
         <p class="card-text">{{ comment.timeStamp }}</p>
       </div>
       <app-stars [rate]="comment.rating"></app-stars>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
+      <p class="card-text">{{ comment.content }}</p>
 
     </div>
   </div>
