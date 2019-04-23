@@ -2,7 +2,7 @@
   <img src="http://placehold.it/820x320" class="card-img-top" alt="...">
   <div class="card-body">
     <div class="row justify-content-between mx-0">
-      <h5 class="card-title" >{{ product.name }}</h5>
+      <h5 class="card-title">{{ product.name }}</h5>
       <h5 class="text-muted">${{ product.price }}</h5>
     </div>
     <p>{{ product.description }}</p>
@@ -12,12 +12,17 @@
 <br>
 <br><br><br>
 <div>
-  <h2 class="header ml-0" style="padding-left: 1.25rem">Review</h2>
-  <div style="padding-left: 1.25rem; padding-bottom: 1.25rem">
-    <app-stars [(rate)]="newRating"></app-stars>
+  <button class="btn btn-success" style="margin: 1.25rem" (click)="isCommentShown = !isCommentShown">
+    <fa-icon [icon]="faEdit"></fa-icon>
+    Write A
+    Review</button>
+  <div style="padding-left: 1.25rem; padding-bottom: 1.25rem" *ngIf="isCommentShown">
+    <app-stars [(rate)]="newRating" [readonly]="false"></app-stars>
     <textarea class="form-control" rows=5 [(ngModel)]="newComment" style="margin-top: 1.25rem; width: 100%"></textarea>
     <button class="btn btn-primary mt-3" type="submit" (click)="addComment()">Submit</button>
   </div>
+
+  <h2 class="header ml-0" style="padding-left: 1.25rem">Review</h2>
   <div class="card border-0" *ngFor="let comment of comments">
     <div class="card-body">
       <div class="row justify-content-between mx-0">

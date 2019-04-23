@@ -9,5 +9,5 @@
       <fa-icon *ngIf="star == 2" [icon]="faStarHalf" (click)="onClickStar(i)"></fa-icon>
     </div>
   </div>
-  <div class="ml-1 align-self-end">{{ rate }}</div>
+  <div class="ml-1 align-self-end">{{ rate | number:'1.0-2' }}</div>
 </div>
