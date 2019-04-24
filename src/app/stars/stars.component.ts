@@ -28,11 +28,7 @@ export class StarsComponent implements OnInit, OnChanges {
     // decide how many full stars and half star
     // use number to indicate the shape of star
     // full star code 1, half star code 2
-    let fullStar = Math.floor(this.rate), halfStar = this.rate % 1;
-    let i = 0;
-    for (; i < fullStar; ++i) this.stars[i] = 1;
-    if (halfStar > 0 && halfStar < 1) this.stars[i] = 2;
-    for (; i < 5; ++i) this.stars[i] = 0;
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -41,8 +37,11 @@ export class StarsComponent implements OnInit, OnChanges {
     let fullStar = Math.floor(this.rate), halfStar = this.rate % 1;
     let i = 0;
     for (; i < fullStar; ++i) this.stars[i] = 1;
-    if (halfStar > 0 && halfStar < 1) this.stars[i] = 2;
+    if (halfStar > 0 && halfStar < 1) {
+      this.stars[i++] = 2;
+    }
     for (; i < 5; ++i) this.stars[i] = 0;
+    console.log(this.stars);
   }
 
   onClickStar(index: number) {

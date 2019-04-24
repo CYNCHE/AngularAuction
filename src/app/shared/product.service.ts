@@ -10,11 +10,11 @@ import { Comment } from '../product/comment.model';
 export class ProductService {
 
   products: Product[] = [
-    new Product(1, 'AsusRog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
+    new Product(1, 'AsusRog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 1, ['laptop', 'electroics']),
     new Product(2, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
     new Product(3, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4.2, ['laptop', 'gaming']),
     new Product(4, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 3.7, ['laptop', 'gaming']),
-    new Product(5, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
+    new Product(5, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'electronics']),
     new Product(6, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
     new Product(7, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
     new Product(8, 'Asus Rog', 'https://www.notebookcheck.net/fileadmin/Notebooks/Asus/GL704GM-DH74/gl704gm.jpg', 2300, 'Boog game laptop', 4, ['laptop', 'gaming']),
@@ -33,6 +33,10 @@ export class ProductService {
 
   getProducts() {
     return this.products;
+  }
+
+  getAllCategories(): string[] {
+    return ["laptop", "electronics"];
   }
 
   getProduct(id: number): Product {

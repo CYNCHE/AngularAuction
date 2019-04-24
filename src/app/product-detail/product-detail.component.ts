@@ -32,7 +32,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addComment() {
-    console.log(this.newRating);
+
     let comment = new Comment(1, this.product.id, new Date().toDateString(), "Vanessa", this.newRating, this.newComment);
     this.comments.unshift(comment);
 
