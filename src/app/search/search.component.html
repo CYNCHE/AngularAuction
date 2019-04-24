@@ -1,17 +1,23 @@
-<form name="searchForm" role="form" [formGroup]="formModel" (ngSublit)="onSearch()" novalidate>
-  <div class="form-group" [class.has-error]="formModel.hasError('minlength', 'name')">
+<form name="searchForm" role="form" [formGroup]="formModel" (ngSublit)="onSearch()" >
+  <div class="form-group" >
     <label for="productName">Name:</label>
-    <input formControlName="title" type="text" id="productName" placeholder="Product Name" class="form-control">
-    <span class="help-block" [hidden]="!formModel.hasError('minlength', 'title')">Please enter at least three characters.</span>
+    <input formControlName="name" type="text" id="productName" placeholder="Enter Product Name"
+      class="form-control" [class.invalid]="formModel.hasError('minlength', 'name')">
+    <span class="help-block" [hidden]="!formModel.hasError('minlength', 'name')">Please Enter At Least Three Characters</span>
   </div>
-  <div class="form-group" [class.has-error]="formModel.hasError('positiveNumber', 'price')">
+  <div class="form-group" >
     <label for="productPrice">Price:</label>
-    <input type="number" id="productPrice" placeholder="Product Price" class="form-control">
-    <span class="help-block" [hidden]="!formModel.hasError('positive', 'price')">Price must be positive.</span>
+    <input formControlName="price" type="number" id="productPrice" placeholder="Enter Product Price"
+      class="form-control" [class.invalid]="formModel.hasError('negativeNumber', 'price')">
+    <span class="help-block" [hidden]="!formModel.hasError('negativeNumber', 'price')">Price Must Be Positive</span>
   </div>
   <div class="form-group">
     <label for="productCategory">Category:</label>
-    <select id="productCategory" class="form-control"></select>
+    <select formControlName="categories" id="productCategory" class="form-control">
+      <option value="-1">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
   </div>
-  <button class="btn btn-primary btn-block" type="submit">Search</button>
+  <button class="btn btn-primary btn-block" type="submit" (click)="onSearch()">Search</button>
 </form>
+
